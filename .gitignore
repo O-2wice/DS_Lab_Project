@@ -1,0 +1,42 @@
+# Data files - too large for git
+data/
+*.csv
+*.xlsx
+*.xls
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (can be large)
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# Logs
+logs/
+*.log
+
+# Secrets
+.env
+*.key
+kaggle.json
