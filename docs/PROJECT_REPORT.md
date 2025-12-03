@@ -9,7 +9,7 @@
 
 ## Abstract
 
-This project develops a machine learning pipeline for corporate bankruptcy prediction using financial ratios from the Taiwan Economic Journal dataset. We address the severe class imbalance problem (3% bankrupt) using SMOTE oversampling and compare three classification algorithms: Logistic Regression, Random Forest, and XGBoost. The best-performing model (XGBoost with tuned hyperparameters) achieves an ROC-AUC of 0.94 and F1-score of 0.54. We demonstrate practical application by integrating the trained model with SAP S/4HANA transactional data for real-time customer risk scoring.
+This project develops a machine learning pipeline for corporate bankruptcy prediction using financial ratios from the Taiwan Economic Journal dataset. We address the severe class imbalance problem (3% bankrupt) using SMOTE oversampling and compare three classification algorithms: Logistic Regression, Random Forest, and XGBoost. The best-performing model (XGBoost with tuned hyperparameters) achieves an ROC-AUC of 0.94 and F1-score of 0.54. We demonstrate practical application by integrating the trained model with SAP S/4HANA transactional data for company risk scoring.
 
 **Keywords:** Bankruptcy Prediction, Machine Learning, XGBoost, SMOTE, Class Imbalance, SAP S/4HANA, Financial Ratios
 
@@ -266,9 +266,9 @@ Top 10 most predictive features:
 
 ### 4.5 SAP Integration Results
 
-Risk scoring applied to SAP customers:
+Risk scoring applied to SAP companies:
 
-| Customer | Company Code | Risk Probability | Risk Category |
+| Company | Company Code | Risk Probability | Risk Category |
 |----------|--------------|------------------|---------------|
 | Global Bikes DE | DE00 | 12% | Low |
 | Speedwell Corp | US00 | 45% | Medium |

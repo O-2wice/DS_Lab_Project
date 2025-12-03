@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This project develops a machine learning pipeline for predicting corporate bankruptcy using financial ratios. The trained model is then applied to SAP S/4HANA transactional data to generate real-time risk scores for business customers.
+This project develops a machine learning pipeline for predicting corporate bankruptcy using financial ratios. The trained model is then applied to SAP S/4HANA transactional data to generate risk scores for SAP companies.
 
 ### Key Results
 
@@ -50,7 +50,7 @@ Following the framework established by [Zhao & Bai (2022)](https://doi.org/10.33
 3. **Models Tested:** Logistic Regression, Random Forest, XGBoost
 4. **Evaluation:** Stratified 5-fold CV, ROC-AUC, Precision, Recall, F1
 5. **Interpretation:** SHAP feature importance analysis
-6. **Deployment:** Risk scoring on SAP customer data
+6. **Deployment:** Risk scoring on SAP company data
 
 ---
 
@@ -153,7 +153,7 @@ seaborn>=0.12.0
 | Random Forest | 0.96 | 0.56 | 0.37 | 0.44 | 0.93 |
 | **XGBoost (Tuned)** | **0.95** | **0.50** | **0.59** | **0.54** | **0.94** |
 
-### Risk Categories (SAP Customers)
+### Risk Categories (SAP Companies)
 
 | Risk Level | Probability Range | Recommended Action |
 |------------|-------------------|-------------------|
