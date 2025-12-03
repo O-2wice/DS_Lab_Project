@@ -34,7 +34,7 @@ We tested three fundamentally different algorithms to understand what works best
 - A model that predicts "healthy" for everyone gets 97% accuracy!
 - But it catches ZERO bankruptcies - completely useless
 
-**Why this is dangerous:** In bankruptcy prediction, **missing a bankrupt company is very costly** (False Negative). Banks could lose millions on bad loans.
+**Why this is dangerous:** In bankruptcy prediction, **missing a bankrupt company is very costly** (False Negative). Investors and business partners could lose millions on failed investments or unpaid invoices.
 
 ### 2.2 Our Solution: SMOTE
 

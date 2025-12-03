@@ -40,3 +40,6 @@ logs/
 .env
 *.key
 kaggle.json
+
+# Presentation slides (offline use only)
+docs/PRESENTATION_SLIDES.md

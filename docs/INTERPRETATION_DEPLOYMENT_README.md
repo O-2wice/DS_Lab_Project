@@ -17,7 +17,7 @@ This document explains **how** we interpret the bankruptcy prediction model and 
 - Which factors drove the prediction?
 - Can we trust this prediction?
 
-**Why this matters in finance:** Regulators (Basel III, IFRS 9) require explainability. Banks can't just say "the model said so."
+**Why this matters in business:** Stakeholders and auditors require explainability. Companies can't make decisions based on "the model said so" without justification.
 
 ### 1.2 Our Solution: SHAP Values
 
@@ -79,8 +79,8 @@ This document explains **how** we interpret the bankruptcy prediction model and 
 **Default behavior:** Models predict "bankrupt" if probability > 0.5
 
 **The problem:** This may not be optimal for business needs:
-- Banks might want higher recall (catch all risky borrowers)
-- Insurance might want higher precision (minimize false alarms)
+- Investors might want higher recall (catch all risky companies)
+- Suppliers might want higher precision (minimize false alarms)
 
 ### 3.2 Threshold Options Analyzed
 
