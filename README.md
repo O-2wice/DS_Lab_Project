@@ -47,9 +47,15 @@ DS_Lab_Project/
 
 ## Setup
 
-`ash
+```bash
 pip install -r requirements.txt
-`
+```
+
+## Run in Google Colab
+
+You can open the notebook directly in Google Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/O-2wice/DS_Lab_Project/blob/main/notebooks/01_EDA_and_Preprocessing.ipynb)
 
 ## License
 
