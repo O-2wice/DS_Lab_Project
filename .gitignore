@@ -43,3 +43,12 @@ kaggle.json
 
 # Presentation slides (offline use only)
 docs/PRESENTATION_SLIDES.md
+
+# Personal documents - LaTeX and PowerPoint (not for repo)
+docs/*.tex
+docs/*.pptx
+docs/*.pdf
+*.tex
+*.pptx
+outputs/*.pptx
+outputs/*.pdf
