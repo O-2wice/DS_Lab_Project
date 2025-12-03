@@ -52,3 +52,5 @@ docs/*.pdf
 *.pptx
 outputs/*.pptx
 outputs/*.pdf
+outputs/figures/
+outputs/export_figures.py
