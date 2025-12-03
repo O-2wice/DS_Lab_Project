@@ -12,13 +12,13 @@ This document explains **what labels SAP S/4HANA would need** to enable actual b
 
 SAP S/4HANA Global Bike Inc. (GBI) is an **educational ERP system** designed to teach students how SAP works. It contains:
 
-✅ **What GBI Has:**
+**What GBI Has:**
 - Transactional data (orders, invoices, payments)
 - Master data (customers, vendors, materials, G/L accounts)
 - Financial documents (journal entries, AR/AP)
 - Organizational structure (company codes, sales orgs, plants)
 
-❌ **What GBI Does NOT Have:**
+**What GBI Does NOT Have:**
 - Historical bankruptcy outcomes for business partners
 - Credit rating scores from external agencies
 - Default/write-off flags on receivables
@@ -124,7 +124,7 @@ def create_distress_label(df):
     return distress.astype(int)
 ```
 
-> ⚠️ **Warning:** Synthetic labels are proxies, not actual outcomes. Models trained on synthetic labels predict the proxy definition, not true bankruptcy.
+> **Warning:** Synthetic labels are proxies, not actual outcomes. Models trained on synthetic labels predict the proxy definition, not true bankruptcy.
 
 ---
 
