@@ -8,6 +8,8 @@
 
 This project develops a machine learning pipeline for predicting corporate bankruptcy using financial ratios. The trained model is then applied to SAP S/4HANA transactional data to generate risk scores for SAP companies.
 
+> **Important Disclaimer:** This is a **proof-of-concept prototype**. The SAP GBI data (Global Bike) does not contain bankruptcy labels. The goal is to demonstrate the methodology and integration capability, NOT to predict actual Global Bike bankruptcy. Risk scores shown are simulated for demonstration purposes.
+
 ### Key Results
 
 | Metric | Value |

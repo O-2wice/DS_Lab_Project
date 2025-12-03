@@ -39,6 +39,16 @@ This project uses two datasets:
 - **Kaggle Bankruptcy Dataset:** 6,819 Taiwanese companies with 95 financial ratios (labeled)
 - **SAP S/4HANA GBI Data:** 6 transactional tables from Global Bike Inc. (unlabeled)
 
+### 1.4 Important Disclaimer
+
+**This project is a proof-of-concept prototype.** The SAP GBI dataset (Global Bike Germany and Global Bike USA) does not contain actual bankruptcy labels or outcomes. The goal is NOT to predict whether Global Bike will go bankrupt, but rather to:
+
+1. **Demonstrate the methodology:** Train a bankruptcy prediction model on labeled Kaggle data
+2. **Show integration capability:** Apply the trained model to SAP transactional data
+3. **Prototype risk scoring:** Generate hypothetical risk scores as a proof-of-concept
+
+The risk scores shown for DE00 (Global Bike Germany) and US00 (Global Bike USA) are **simulated values for demonstration purposes only** and do not represent actual bankruptcy predictions.
+
 ---
 
 ## 2. Literature Review
