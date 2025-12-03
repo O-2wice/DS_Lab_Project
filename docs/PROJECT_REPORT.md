@@ -266,15 +266,14 @@ Top 10 most predictive features:
 
 ### 4.5 SAP Integration Results
 
-Risk scoring applied to SAP companies:
+Risk scoring applied to SAP GBI company codes:
 
-| Company | Company Code | Risk Probability | Risk Category |
-|----------|--------------|------------------|---------------|
-| Global Bikes DE | DE00 | 12% | Low |
-| Speedwell Corp | US00 | 45% | Medium |
-| Mountain Gear | DE00 | 72% | High |
-| Urban Cycles | US00 | 28% | Low |
-| Trail Master | DE00 | 55% | Medium |
+| Company Code | Company Name | Transactions | Risk Probability | Risk Category |
+|--------------|--------------|--------------|------------------|---------------|
+| DE00 | Global Bike Germany | 14,092 | 32% | Medium |
+| US00 | Global Bike USA | 24,087 | 28% | Low |
+
+*Note: Risk probabilities are simulated for demonstration purposes, calculated from aggregated SAP transactional metrics.*
 
 Risk Categories:
 - **Low (< 30%):** Standard credit terms
