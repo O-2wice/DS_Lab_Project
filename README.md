@@ -175,6 +175,7 @@ Detailed documentation is available in the `docs/` folder:
 - [Interpretation README](docs/INTERPRETATION_DEPLOYMENT_README.md) - SHAP and deployment
 - [Results README](docs/RESULTS_README.md) - Final results summary
 - [Baseline Paper](docs/BASELINE_PAPER.md) - Methodology reference
+- [Future Labels README](docs/FUTURE_LABELS_README.md) - What labels SAP would need for real predictions
 
 ---
 
