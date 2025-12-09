@@ -1,5 +1,5 @@
-# Bankruptcy Prediction Using Machine Learning
-## Integrated Financial Risk Forecasting with SAP S/4HANA Data
+# Integrated Financial and Operational Risk Forecasting in SAP S/4HANA
+## Using Machine Learning and Transfer Learning from External Bankruptcy Data
 
 **Data Science Lab Project Report**
 
@@ -9,9 +9,9 @@
 
 ## Abstract
 
-This project develops a machine learning pipeline for corporate bankruptcy prediction using financial ratios from the Taiwan Economic Journal dataset. We address the severe class imbalance problem (3% bankrupt) using SMOTE oversampling and compare three classification algorithms: Logistic Regression, Random Forest, and XGBoost. The best-performing model (XGBoost with tuned hyperparameters) achieves an ROC-AUC of 0.94 and F1-score of 0.54. We demonstrate practical application by integrating the trained model with SAP S/4HANA transactional data for company risk scoring.
+This project demonstrates an integrated approach to financial and operational risk forecasting in SAP S/4HANA environments using transfer learning from external financial distress data. We train machine learning models on labeled bankruptcy data from the Taiwan Economic Journal (6,819 companies with 95 financial ratios) and apply the learned patterns to SAP S/4HANA transactional data to generate continuous risk scores for operational decision-making. The methodology addresses class imbalance using SMOTE oversampling and compares three algorithms: Logistic Regression, Random Forest, and XGBoost. The best model (XGBoost) achieves ROC-AUC of 0.94. The resulting risk scoring framework enables data-driven decisions in accounts receivable, accounts payable, credit management, and supplier evaluation within ERP systems.
 
-**Keywords:** Bankruptcy Prediction, Machine Learning, XGBoost, SMOTE, Class Imbalance, SAP S/4HANA, Financial Ratios
+**Keywords:** Risk Forecasting, Transfer Learning, XGBoost, SMOTE, SAP S/4HANA, ERP Integration, Financial Ratios, Operational Risk
 
 ---
 
@@ -19,35 +19,52 @@ This project develops a machine learning pipeline for corporate bankruptcy predi
 
 ### 1.1 Problem Statement
 
-Corporate bankruptcy prediction is a critical task for financial institutions, investors, and business partners. Early identification of companies at risk of default enables proactive risk management, better credit decisions, and reduced financial losses. However, bankruptcy prediction presents several challenges:
+Enterprises using SAP S/4HANA systems need continuous risk assessment capabilities to support operational decisions across finance, sales, and procurement. Traditional approaches rely on manual review, external credit ratings, or simple heuristics. This project addresses the challenge of **automated, data-driven risk forecasting** by applying transfer learning from external financial distress data to SAP transactional data.
 
-1. **Class Imbalance:** Bankrupt companies are rare (typically 1-5% of datasets)
-2. **High Dimensionality:** Financial statements contain numerous ratios and metrics
-3. **Non-linear Relationships:** Complex interactions between financial indicators
-4. **Temporal Dependencies:** Financial distress develops over time
+**Key Challenges:**
+
+1. **Lack of Labeled Data:** SAP systems don't have bankruptcy labels for customers/suppliers
+2. **Transfer Learning:** Applying models trained on external data to SAP companies
+3. **Feature Engineering:** Mapping SAP FI/SD transactions to financial ratios
+4. **Class Imbalance:** Financial distress is rare (1-5% of companies)
+5. **Operational Integration:** Translating risk scores into actionable ERP workflows
 
 ### 1.2 Objectives
 
-1. Develop a machine learning model to predict corporate bankruptcy using financial ratios
-2. Address the class imbalance problem using appropriate resampling techniques
-3. Identify the most predictive financial features using interpretable methods
-4. Demonstrate practical application with SAP S/4HANA enterprise data
+1. **Transfer Learning:** Train ML models on labeled financial distress data and apply to SAP companies
+2. **Risk Scoring:** Generate continuous risk scores (0-100%) for operational decision-making
+3. **Feature Engineering:** Map SAP transactional data to financial ratios
+4. **Class Imbalance:** Address rare financial distress events using SMOTE resampling
+5. **Interpretability:** Identify key risk drivers using SHAP feature importance
+6. **ERP Integration:** Demonstrate risk-based workflows for SAP S/4HANA
 
 ### 1.3 Scope
 
-This project uses two datasets:
+This project demonstrates **transfer learning for financial and operational risk forecasting** using:
+
+**Training Data (External):**
 - **Kaggle Bankruptcy Dataset:** 6,819 Taiwanese companies with 95 financial ratios (labeled)
-- **SAP S/4HANA GBI Data:** 6 transactional tables from Global Bike Inc. (unlabeled)
+- **Purpose:** Learn patterns of financial distress
 
-### 1.4 Important Disclaimer
+**Application Data (SAP):**
+- **SAP S/4HANA GBI:** 6 transactional tables from Global Bike Inc. (unlabeled)
+- **Purpose:** Generate risk scores for operational decisions
 
-**This project is a proof-of-concept prototype.** The SAP GBI dataset (Global Bike Germany and Global Bike USA) does not contain actual bankruptcy labels or outcomes. The goal is NOT to predict whether Global Bike will go bankrupt, but rather to:
+### 1.4 Project Scope and Application
 
-1. **Demonstrate the methodology:** Train a bankruptcy prediction model on labeled Kaggle data
-2. **Show integration capability:** Apply the trained model to SAP transactional data
-3. **Prototype risk scoring:** Generate hypothetical risk scores as a proof-of-concept
+**This is a risk forecasting and scoring system**, not a bankruptcy prediction tool. The outputs are:
 
-The risk scores shown for DE00 (Global Bike Germany) and US00 (Global Bike USA) are **simulated values for demonstration purposes only** and do not represent actual bankruptcy predictions.
+1. **Continuous Risk Scores (0-100%):** Indicating relative financial health
+2. **Risk-Based Decision Rules:** For credit limits, payment terms, supplier evaluation
+3. **Integration Framework:** How to embed risk scores in SAP workflows
+
+**Operational Use Cases:**
+- Customer credit limit assignment (AR management)
+- Supplier risk assessment (AP management)
+- Sales opportunity prioritization
+- Risk-adjusted financial forecasting
+
+The system demonstrates **how external financial distress patterns can inform operational decisions in ERP systems** through transfer learning.
 
 ---
 

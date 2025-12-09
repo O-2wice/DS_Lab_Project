@@ -1,16 +1,18 @@
 # Data Documentation
 
-This project uses two complementary datasets for financial and operational risk forecasting.
+This project demonstrates **transfer learning for financial risk forecasting** by training on external labeled data and applying to SAP S/4HANA companies.
 
 ---
 
-## 1. Kaggle Company Bankruptcy Prediction Dataset (Secondary - Labeled)
+## 1. External Training Dataset: Taiwan Financial Distress Data (Transfer Learning Source)
 
 **Location:** `data/kaggle/kaggle_company_bankruptcy.csv`
 
 **Source:** [Kaggle - Company Bankruptcy Prediction](https://www.kaggle.com/datasets/fedesoriano/company-bankruptcy-prediction)
 
-**Description:** Taiwan Economic Journal company bankruptcy data (1999-2009)
+**Description:** Taiwan Economic Journal company financial distress data (1999-2009)
+
+**Purpose:** Train ML models on labeled financial distress patterns to transfer to SAP companies
 
 | Property | Value |
 |----------|-------|
@@ -34,13 +36,15 @@ df_kaggle = pd.read_csv('data/kaggle/kaggle_company_bankruptcy.csv')
 
 ---
 
-## 2. SAP S/4HANA Global Bike Dataset (Primary - Unlabeled)
+## 2. SAP S/4HANA Global Bike Dataset (Primary Application Target - Unlabeled)
 
 **Location:** `data/sap/`
 
 **Source:** SAP S/4HANA Global Bike Inc. (GBI) Educational System via SAP GUI (UCC)
 
-**Description:** Enterprise transactional data from Global Bike Inc., a fictional company used for SAP training. Contains real ERP transactions across Financial Accounting (FI) and Sales & Distribution (SD) modules.
+**Description:** Enterprise transactional data from Global Bike Inc., demonstrating how to apply trained risk models to SAP companies. Contains real ERP transactions across Financial Accounting (FI) and Sales & Distribution (SD) modules.
+
+**Purpose:** Target dataset for risk scoring and operational decision-making
 
 ### Company Codes in GBI:
 | Code | Description | Currency |

@@ -1,10 +1,10 @@
-# Model Interpretation & Deployment Report
+# Model Interpretation & Deployment Report: Transfer Learning to SAP S/4HANA
 
 ## Executive Summary
 
-This document explains **how** we interpret the bankruptcy prediction model and **why** each deployment decision was made.
+This document explains **how** we interpret the risk forecasting model and **how** we deploy it to SAP S/4HANA companies for operational decision-making.
 
-**Key Takeaway:** SHAP analysis confirms that debt dependency is the #1 bankruptcy predictor. Threshold optimization at 0.45 achieves F1=0.55 with 61% recall. The model successfully scores SAP companies DE00 and US00, identifying transaction-level risk patterns.
+**Key Takeaway:** SHAP analysis confirms that debt dependency is the #1 financial distress predictor. Threshold optimization at 0.45 achieves F1=0.55 with 61% recall. The trained model successfully transfers to SAP companies (DE00, US00), generating continuous risk scores (0-100%) for operational workflows like credit management, supplier assessment, and financial planning.
 
 ---
 

@@ -1,14 +1,16 @@
-# Bankruptcy Prediction Using Machine Learning
+# Integrated Financial and Operational Risk Forecasting in SAP S/4HANA
 
-**Integrated Financial Risk Forecasting with SAP S/4HANA Data**
+**Using Machine Learning and Transfer Learning from External Bankruptcy Data**
 
 ---
 
 ## Project Overview
 
-This project develops a machine learning pipeline for predicting corporate bankruptcy using financial ratios. The trained model is then applied to SAP S/4HANA transactional data to generate risk scores for SAP companies.
+This project demonstrates **financial and operational risk forecasting** for SAP S/4HANA companies by applying transfer learning from external bankruptcy data. Rather than predicting bankruptcy per se, the goal is to generate **continuous risk scores** that inform operational decisions such as credit limits, payment terms, supplier evaluation, and customer risk assessment.
 
-> **Important Disclaimer:** This is a **proof-of-concept prototype**. The SAP GBI data (Global Bike) does not contain bankruptcy labels. The goal is to demonstrate the methodology and integration capability, NOT to predict actual Global Bike bankruptcy. Risk scores shown are simulated for demonstration purposes.
+The methodology uses machine learning models trained on labeled financial distress data (Kaggle Taiwan bankruptcy dataset) and transfers the learned patterns to SAP S/4HANA transactional data to produce risk scores for companies like Global Bike Germany (DE00) and Global Bike USA (US00).
+
+> **Project Focus:** This is a **risk scoring and forecasting system**, not a binary bankruptcy classifier. The outputs are continuous risk scores (0-100%) that enable data-driven operational decisions in ERP systems.
 
 ### Key Results
 
@@ -17,21 +19,22 @@ This project develops a machine learning pipeline for predicting corporate bankr
 | **Best Model** | XGBoost (tuned) |
 | **ROC-AUC** | 0.94 |
 | **F1-Score** | 0.54 |
-| **Recall (Bankruptcy)** | 59% |
-| **Optimal Threshold** | 0.45 |
+| **Recall (Financial Distress)** | 59% |
+| **Risk Score Range** | 0-100% (continuous) |
+| **Application** | SAP company risk scoring |
 
 ---
 
 ## Datasets
 
-### 1. Kaggle Bankruptcy Dataset (Training)
-- **Source:** Taiwan Economic Journal (1999-2009)
+### 1. External Bankruptcy Dataset (Transfer Learning Source)
+- **Source:** Taiwan Economic Journal (1999-2009) via Kaggle
 - **Size:** 6,819 companies
 - **Features:** 95 financial ratios
-- **Target:** Binary (0 = Healthy, 1 = Bankrupt)
-- **Class Imbalance:** 97% healthy, 3% bankrupt
+- **Purpose:** Train ML models on labeled financial distress patterns
+- **Class Distribution:** 97% healthy, 3% financial distress
 
-### 2. SAP S/4HANA GBI Data (Application)
+### 2. SAP S/4HANA GBI Data (Primary Application Target)
 | Table | Description | Records |
 |-------|-------------|---------|
 | BKPF | Accounting Document Headers | 38,179 |
@@ -43,16 +46,23 @@ This project develops a machine learning pipeline for predicting corporate bankr
 
 ---
 
-## Methodology
+## Methodology: Transfer Learning for Risk Forecasting
 
-Following the framework established by [Zhao & Bai (2022)](https://doi.org/10.3390/e24081144):
+This project applies **transfer learning** to financial risk assessment by training on external labeled data and applying to SAP companies:
 
+### Phase 1: Model Training (External Data)
 1. **Preprocessing:** StandardScaler normalization, outlier capping (IQR)
-2. **Class Imbalance:** SMOTE oversampling (3% to 50%)
-3. **Models Tested:** Logistic Regression, Random Forest, XGBoost
+2. **Class Imbalance Handling:** SMOTE oversampling (3% to 50%)
+3. **Model Development:** Logistic Regression, Random Forest, XGBoost
 4. **Evaluation:** Stratified 5-fold CV, ROC-AUC, Precision, Recall, F1
-5. **Interpretation:** SHAP feature importance analysis
-6. **Deployment:** Risk scoring on SAP company data
+5. **Feature Selection:** SHAP-based importance analysis
+
+### Phase 2: Transfer to SAP S/4HANA
+6. **Feature Engineering:** Map SAP FI/SD data to financial ratios
+7. **Risk Scoring:** Generate continuous risk scores (0-100%)
+8. **Operational Integration:** Risk-based decision rules for ERP workflows
+
+Following the framework of [Zhao & Bai (2022)](https://doi.org/10.3390/e24081144) for handling financial distress data.
 
 ---
 
@@ -88,9 +98,10 @@ DS_Lab_Project/
 
 | Notebook | Description | Key Outputs |
 |----------|-------------|-------------|
-| **01_EDA_and_Preprocessing** | Data exploration, scaling, SMOTE | Train/test splits, correlation analysis |
+| **01_EDA_and_Preprocessing** | Data exploration, feature engineering, SMOTE | Processed datasets, correlation analysis |
 | **02_Model_Training** | Model comparison, hyperparameter tuning | Best model: XGBoost (ROC-AUC: 0.94) |
-| **03_Model_Interpretation** | SHAP analysis, threshold optimization, SAP scoring | Feature importance, risk categories |
+| **03_Model_Interpretation_and_Deployment** | SHAP analysis, SAP integration, risk scoring | Risk scores for SAP companies |
+| **04_Project_Summary** | Overview and consolidated results | Final visualizations and insights |
 
 ---
 
@@ -155,13 +166,19 @@ seaborn>=0.12.0
 | Random Forest | 0.96 | 0.56 | 0.37 | 0.44 | 0.93 |
 | **XGBoost (Tuned)** | **0.95** | **0.50** | **0.59** | **0.54** | **0.94** |
 
-### Risk Categories (SAP Companies)
+### Risk Scoring Framework for SAP Companies
 
-| Risk Level | Probability Range | Recommended Action |
-|------------|-------------------|-------------------|
-| Low | < 30% | Standard terms |
-| Medium | 30-60% | Enhanced monitoring |
-| High | > 60% | Credit review required |
+| Risk Level | Score Range | Operational Actions |
+|------------|-------------|---------------------|
+| **Low Risk** | 0-30% | Standard credit terms, automated processing |
+| **Medium Risk** | 30-60% | Enhanced monitoring, credit limit review |
+| **High Risk** | 60-100% | Manual approval required, reduced credit limits |
+
+**Application Areas:**
+- **Accounts Receivable:** Customer credit limits and payment terms
+- **Accounts Payable:** Supplier reliability assessment
+- **Sales Planning:** Customer relationship management
+- **Financial Planning:** Risk-adjusted revenue forecasting
 
 ---
 

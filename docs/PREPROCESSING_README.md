@@ -1,10 +1,10 @@
-# Preprocessing Report: EDA & Data Preparation
+# Preprocessing Report: EDA & Data Preparation for Risk Forecasting
 
 ## Executive Summary
 
-This document explains **why** each preprocessing decision was made and **what insights** we discovered during exploratory data analysis (EDA) of the bankruptcy prediction datasets.
+This document explains **why** each preprocessing decision was made and **what insights** we discovered during exploratory data analysis (EDA) for the integrated financial and operational risk forecasting project.
 
-**Key Takeaway:** The Kaggle bankruptcy dataset is clean but heavily imbalanced (only 3% bankrupt). We applied SMOTE to balance classes, identified 19 redundant feature pairs, and found that 45 principal components capture 90% of the information in 95 features.
+**Key Takeaway:** The external financial distress dataset is clean but heavily imbalanced (only 3% distressed companies). We applied SMOTE to balance classes for model training, identified 19 redundant feature pairs, and found that 45 principal components capture 90% of the information in 95 features. These preprocessing steps enable effective transfer learning to SAP S/4HANA companies.
 
 ---
 

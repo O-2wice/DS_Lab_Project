@@ -1,10 +1,10 @@
-# Model Training Report: Building the Bankruptcy Prediction Model
+# Model Training Report: Building the Financial Risk Forecasting Model
 
 ## Executive Summary
 
-This document explains **why** each modeling decision was made and **what results** we achieved in training machine learning models for bankruptcy prediction.
+This document explains **why** each modeling decision was made and **what results** we achieved in training machine learning models for **financial and operational risk forecasting**. These models form the foundation for transfer learning to SAP S/4HANA companies.
 
-**Key Takeaway:** XGBoost with SMOTE-balanced training data and hyperparameter tuning achieved the best performance (F1=0.54, Recall=59%, ROC-AUC=0.94). The model correctly identifies high-risk companies while maintaining reasonable precision.
+**Key Takeaway:** XGBoost with SMOTE-balanced training data and hyperparameter tuning achieved the best performance (F1=0.54, Recall=59%, ROC-AUC=0.94). The model learns patterns of financial distress that we transfer to SAP companies for operational risk scoring.
 
 ---
 

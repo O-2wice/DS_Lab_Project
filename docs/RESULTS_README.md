@@ -1,8 +1,8 @@
 # Experiment Results Summary
 
-## Project: Bankruptcy Prediction for SAP S/4HANA
+## Project: Integrated Financial and Operational Risk Forecasting in SAP S/4HANA
 
-This document summarizes the complete experimental pipeline and key results.
+This document summarizes the complete experimental pipeline and key results for the risk forecasting system.
 
 ---
 
@@ -10,11 +10,12 @@ This document summarizes the complete experimental pipeline and key results.
 
 | Aspect | Details |
 |--------|---------|
-| **Objective** | Build a bankruptcy prediction model using Kaggle data, apply to SAP enterprise data |
-| **Approach** | Transfer learning: Train on labeled data → Score unlabeled SAP data |
+| **Objective** | Build a financial risk forecasting system using transfer learning from external data to SAP S/4HANA |
+| **Approach** | Transfer learning: Train on labeled financial distress data → Generate risk scores for SAP companies |
 | **Models Tested** | Logistic Regression, Random Forest, XGBoost |
 | **Best Model** | XGBoost with SMOTE + Hyperparameter Tuning |
 | **Final Performance** | F1=0.54, Recall=59%, ROC-AUC=0.94 |
+| **Output** | Continuous risk scores (0-100%) for operational decision-making |
 
 ---
 
@@ -22,7 +23,7 @@ This document summarizes the complete experimental pipeline and key results.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    BANKRUPTCY PREDICTION PIPELINE                    │
+│          FINANCIAL & OPERATIONAL RISK FORECASTING PIPELINE           │
 └─────────────────────────────────────────────────────────────────────┘
                                    │
      ┌─────────────────────────────┼─────────────────────────────┐
