@@ -15,6 +15,19 @@ This project demonstrates an integrated approach to financial and operational ri
 
 ---
 
+## Important Disclaimer
+
+**This project is a proof-of-concept prototype for educational purposes.**
+
+**Scope of Implementation:**
+- ✅ **Fully Implemented:** Model training, evaluation, and interpretation on Kaggle bankruptcy dataset (6,819 companies)
+- ⚠️ **Demonstrative Only:** SAP company risk scores are simulated to illustrate potential application
+- ⚠️ **Not Implemented:** Financial ratio calculation from SAP G/L accounts, production deployment, real-time integration
+
+**Rationale:** The focus is on demonstrating data science methodology (SMOTE, XGBoost, SHAP, threshold optimization) rather than enterprise software engineering. SAP GBI is an educational dataset without bankruptcy labels, making actual validation impossible.
+
+---
+
 ## 1. Introduction
 
 ### 1.1 Problem Statement

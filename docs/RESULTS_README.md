@@ -6,6 +6,22 @@ This document summarizes the complete experimental pipeline and key results for 
 
 ---
 
+## ⚠️ Scope & Validation
+
+**What Results are Validated:**
+- ✅ All model performance metrics (ROC-AUC 0.94, F1 0.54, Recall 59%) are from actual Kaggle test data
+- ✅ SHAP analysis, threshold optimization, and confusion matrices are real
+- ✅ Model successfully generalizes to held-out test set (1,364 companies)
+
+**What is Demonstrative:**
+- ⚠️ SAP company risk scores are simulated examples (not validated predictions)
+- ⚠️ Transfer learning to SAP is conceptual - full feature engineering not implemented
+- ⚠️ No ground truth exists for SAP GBI companies (educational dataset has no bankruptcy labels)
+
+**Conclusion:** The model works well on the labeled dataset it was trained for. SAP application is a demonstration of the methodology pathway.
+
+---
+
 ## 1. Experiment Overview
 
 | Aspect | Details |

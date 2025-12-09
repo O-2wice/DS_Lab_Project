@@ -1,8 +1,20 @@
 # Model Interpretation & Deployment Report: Transfer Learning to SAP S/4HANA
 
+## ⚠️ Important: Scope Clarification
+
+**Implementation Status:**
+- ✅ **Fully Implemented:** Model interpretation (SHAP), threshold optimization, risk scoring framework
+- ✅ **Real Results:** All analysis performed on actual Kaggle test data (1,364 companies)
+- ⚠️ **Demonstrative:** SAP deployment is conceptual - shows HOW it would work, not actual integration
+- ⚠️ **Not Implemented:** Financial ratio calculation from SAP G/L accounts, production API, real-time scoring
+
+This document describes the methodology and framework for deployment, even though full SAP integration requires additional feature engineering work.
+
+---
+
 ## Executive Summary
 
-This document explains **how** we interpret the risk forecasting model and **how** we deploy it to SAP S/4HANA companies for operational decision-making.
+This document explains **how** we interpret the risk forecasting model and **how** deployment to SAP S/4HANA companies **would work** in a production environment.
 
 **Key Takeaway:** SHAP analysis confirms that debt dependency is the #1 financial distress predictor. Threshold optimization at 0.45 achieves F1=0.55 with 61% recall. The trained model successfully transfers to SAP companies (DE00, US00), generating continuous risk scores (0-100%) for operational workflows like credit management, supplier assessment, and financial planning.
 

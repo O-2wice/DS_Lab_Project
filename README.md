@@ -4,6 +4,26 @@
 
 ---
 
+## ⚠️ Important: Project Scope & Limitations
+
+**This is a proof-of-concept prototype demonstrating data science methodology.** 
+
+**What is REAL:**
+- ✅ Model trained on 6,819 real companies with actual bankruptcy outcomes
+- ✅ Achieved 94% ROC-AUC using XGBoost + SMOTE on Kaggle test data
+- ✅ Full ML pipeline: preprocessing, model comparison, hyperparameter tuning, SHAP analysis
+- ✅ SAP S/4HANA data exported from real ERP system (GBI educational dataset)
+
+**What is DEMONSTRATIVE:**
+- ⚠️ SAP company risk scores (DE00, US00) are simulated examples, not actual predictions
+- ⚠️ Financial ratios NOT calculated from SAP transactional data (would require G/L account mapping)
+- ⚠️ No production deployment or real-time SAP integration implemented
+- ⚠️ SAP GBI has no bankruptcy labels, so predictions cannot be validated
+
+**Value:** This project demonstrates a complete data science workflow and shows HOW transfer learning could be applied to ERP systems, even though full implementation requires additional feature engineering work.
+
+---
+
 ## Project Overview
 
 This project demonstrates **financial and operational risk forecasting** for SAP S/4HANA companies by applying transfer learning from external bankruptcy data. Rather than predicting bankruptcy per se, the goal is to generate **continuous risk scores** that inform operational decisions such as credit limits, payment terms, supplier evaluation, and customer risk assessment.
